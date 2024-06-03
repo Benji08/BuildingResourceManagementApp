@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.AdminController">
+    <children>
+        <TabPane layoutY="-3.0" prefHeight="720.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="  User  ">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <HBox layoutX="351.0" layoutY="116.0" prefHeight="574.0" prefWidth="929.0">
+                                    <children>
+                                        <TableView fx:id="classroomtable" prefHeight="574.0" prefWidth="922.0">
+                                            <columns>
+                                                <TableColumn fx:id="classnumbercolumn" maxWidth="200.0" prefWidth="185.0" text="Class number" />
+                                                <TableColumn fx:id="floorcolumn" maxWidth="200.0" prefWidth="185.0" text="Floor" />
+                                                <TableColumn fx:id="seatsnumbercolumn" maxWidth="200.0" prefWidth="185.0" text="Seats number" />
+                                                <TableColumn fx:id="computersnumbercolumn" maxWidth="200.0" prefWidth="185.0" text="Computers number" />
+                                                <TableColumn fx:id="projectorcolumn" maxWidth="200.0" prefWidth="180.0" text="Projector" />
+                                            </columns>
+                                            <HBox.margin>
+                                                <Insets left="7.0" />
+                                            </HBox.margin>
+                                        </TableView>
+                                    </children>
+                                </HBox>
+                                <VBox layoutX="7.0" layoutY="-1.0" prefHeight="693.0" prefWidth="344.0" AnchorPane.leftAnchor="7.0">
+                                    <children>
+                                        <Label prefHeight="17.0" prefWidth="103.0" text="Add clasroom">
+                                            <VBox.margin>
+                                                <Insets left="10.0" top="10.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font></Label>
+                                        <TextField fx:id="classNumber" prefHeight="23.0" prefWidth="320.0" promptText="class number">
+                                            <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                        <TextField fx:id="floor" layoutX="20.0" layoutY="42.0" prefHeight="23.0" prefWidth="320.0" promptText="floor">
+                                            <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                        <TextField fx:id="numberOfSeats" layoutX="10.0" layoutY="60.0" prefHeight="23.0" prefWidth="320.0" promptText="number of seats">
+                                            <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                        <Button fx:id="addClass" mnemonicParsing="false" onAction="#addClassroomAction" prefHeight="25.0" prefWidth="326.0" text="Add class">
+                                            <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0" />
+                                            </VBox.margin>
+                                        </Button>
+                                        <Label fx:id="classErrorLabel" prefWidth="286.0">
+                                            <VBox.margin>
+                                                <Insets bottom="5.0" left="10.0" top="10.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                        <VBox prefHeight="200.0" prefWidth="100.0">
+                                            <children>
+                                                <Label prefHeight="17.0" prefWidth="120.0" text="Add equipment">
+                                                    <VBox.margin>
+                                                        <Insets left="10.0" right="10.0" top="5.0" />
+                                                    </VBox.margin>
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="eqClassNumber" promptText="class number">
+                                                    <VBox.margin>
+                                                        <Insets left="10.0" right="10.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="eqModel" layoutX="10.0" layoutY="27.0" promptText="model">
+                                                    <VBox.margin>
+                                                        <Insets left="10.0" right="10.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </TextField>
+                                                <ComboBox fx:id="eqType" prefHeight="25.0" prefWidth="326.0" promptText="Select type of equipment">
+                                                    <VBox.margin>
+                                                        <Insets left="10.0" right="10.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </ComboBox>
+                                                <Button fx:id="addEquipment" mnemonicParsing="false" onAction="#addEquipmentAction" prefHeight="25.0" prefWidth="326.0" text="Add equipment">
+                                                    <VBox.margin>
+                                                        <Insets left="10.0" right="10.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </Button>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets top="50.0" />
+                                            </VBox.margin>
+                                        </VBox>
+                                        <Label fx:id="eqErrorLabel" prefWidth="286.0">
+                                            <VBox.margin>
+                                                <Insets bottom="5.0" left="10.0" top="10.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                        <VBox prefHeight="200.0" prefWidth="100.0">
+                                            <children>
+                                                <Label prefHeight="17.0" prefWidth="82.0" text="Reservation">
+                                                    <VBox.margin>
+                                                        <Insets left="10.0" top="10.0" />
+                                                    </VBox.margin>
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="rClassNumber" promptText="class number">
+                                                    <VBox.margin>
+                                                        <Insets left="10.0" right="10.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </TextField>
+                                                <DatePicker fx:id="rDate" editable="false" prefWidth="324.0">
+                                                    <VBox.margin>
+                                                        <Insets left="10.0" right="10.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </DatePicker>
+                                                <TextField fx:id="rStart">
+                                                    <VBox.margin>
+                                                        <Insets left="10.0" right="10.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="rEnd">
+                                                    <VBox.margin>
+                                                        <Insets left="10.0" right="10.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </TextField>
+                                                <Button fx:id="rBookButton" mnemonicParsing="false" onAction="#reserveAction" prefHeight="25.0" prefWidth="326.0" text="Book">
+                                                    <VBox.margin>
+                                                        <Insets left="10.0" right="10.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </Button>
+                                                <Label fx:id="rLabelError" prefWidth="324.0" textAlignment="CENTER" textFill="RED">
+                                                    <VBox.margin>
+                                                        <Insets left="10.0" />
+                                                    </VBox.margin>
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                        </VBox>
+                                        <VBox alignment="BOTTOM_LEFT" prefHeight="276.0" prefWidth="344.0">
+                                            <children>
+                                                <Button mnemonicParsing="false" onAction="#loadClassroomData" prefHeight="34.0" prefWidth="326.0" text="Refresh">
+                                                    <VBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </Button>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+                                <HBox layoutX="359.0" prefHeight="116.0" prefWidth="920.0">
+                                    <children>
+                                        <VBox prefHeight="200.0" prefWidth="130.0">
+                                            <children>
+                                                <Label maxWidth="120.0" text="Number of seats">
+                                                    <VBox.margin>
+                                                        <Insets top="16.0" />
+                                                    </VBox.margin>
+                                                </Label>
+                                                <TextField fx:id="fSeats" promptText="0" text="0" />
+                                            </children>
+                                        </VBox>
+                                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="130.0">
+                                            <children>
+                                                <Label prefWidth="120.0" text="Computers">
+                                                    <VBox.margin>
+                                                        <Insets top="16.0" />
+                                                    </VBox.margin>
+                                                </Label>
+                                                <TextField fx:id="fComputers" promptText="0" text="0" />
+                                            </children>
+                                        </VBox>
+                                        <VBox layoutX="110.0" layoutY="10.0" prefHeight="200.0" prefWidth="130.0">
+                                            <children>
+                                                <Label prefWidth="120.0" text="Printers">
+                                                    <VBox.margin>
+                                                        <Insets top="16.0" />
+                                                    </VBox.margin>
+                                                </Label>
+                                                <TextField fx:id="fPrinters" promptText="0" text="0" />
+                                            </children>
+                                        </VBox>
+                                        <VBox layoutX="210.0" layoutY="10.0" prefHeight="200.0" prefWidth="130.0">
+                                            <children>
+                                                <Label prefWidth="120.0" text="Projectors">
+                                                    <VBox.margin>
+                                                        <Insets top="16.0" />
+                                                    </VBox.margin>
+                                                </Label>
+                                                <TextField fx:id="fProjectors" promptText="0" text="0" />
+                                            </children>
+                                        </VBox>
+                                        <VBox layoutX="310.0" layoutY="10.0" prefHeight="200.0" prefWidth="130.0">
+                                            <children>
+                                                <Label prefWidth="120.0" text="Data ">
+                                                    <VBox.margin>
+                                                        <Insets top="16.0" />
+                                                    </VBox.margin>
+                                                </Label>
+                                                <DatePicker fx:id="fDate" editable="false" promptText="data" />
+                                            </children>
+                                        </VBox>
+                                        <VBox layoutX="410.0" layoutY="10.0" prefHeight="200.0" prefWidth="130.0">
+                                            <children>
+                                                <Label prefWidth="120.0" text="Hour start">
+                                                    <VBox.margin>
+                                                        <Insets top="16.0" />
+                                                    </VBox.margin>
+                                                </Label>
+                                                <TextField fx:id="fStart" text="8" />
+                                                <Label layoutX="10.0" layoutY="10.0" prefWidth="120.0" text="Hour end" />
+                                                <TextField fx:id="fEnd" layoutX="10.0" layoutY="27.0" text="10" />
+                                            </children>
+                                        </VBox>
+                                        <VBox layoutX="510.0" layoutY="10.0" prefHeight="200.0" prefWidth="130.0">
+                                            <children>
+                                                <Label prefWidth="120.0" />
+                                                <Button fx:id="fFiltrButton" mnemonicParsing="false" onAction="#loadClassroomFiltered" prefWidth="120.0" text="Filtr">
+                                                    <VBox.margin>
+                                                        <Insets left="10.0" top="16.0" />
+                                                    </VBox.margin>
+                                                </Button>
+                                                <Label fx:id="fLabelError" prefHeight="60.0" prefWidth="130.0" wrapText="true">
+                                                    <font>
+                                                        <Font size="11.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
